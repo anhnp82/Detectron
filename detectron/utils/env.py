@@ -24,9 +24,9 @@ import os
 import sys
 
 # Default value of the CMake install prefix
-_CMAKE_INSTALL_PREFIX = '/usr/local'
+_CMAKE_INSTALL_PREFIX = 'C:/Users/Phan-Anh/AppData/Local/Programs/Python/Python36/'
 # Detectron ops lib
-_DETECTRON_OPS_LIB = 'libcaffe2_detectron_ops_gpu.so'
+_DETECTRON_OPS_LIB = 'caffe2_detectron_ops_gpu.dll'
 
 
 def get_runtime_dir():
@@ -79,7 +79,7 @@ def get_custom_ops_lib():
     det_dir, _ = os.path.split(os.path.dirname(__file__))
     root_dir, _ = os.path.split(det_dir)
     custom_ops_lib = os.path.join(
-        root_dir, 'build/libcaffe2_detectron_custom_ops_gpu.so')
+        root_dir, 'caffe2_detectron_ops_gpu.dll')
     assert os.path.exists(custom_ops_lib), \
         'Custom ops lib not found at \'{}\''.format(custom_ops_lib)
     return custom_ops_lib
